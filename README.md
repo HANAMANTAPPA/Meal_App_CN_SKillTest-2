@@ -3,6 +3,12 @@ Simple a meal app to store and search meals.
 here I used vanilla JS  
 Visite the following website fo working demo https://hanamantappa.github.io/Meal_App_CN_SKillTest-2/
 
+# Home Page
+
+# Meal Detail Page
+
+# My favourite meals Page
+
 ## 1st part- UI design
    * ### Home page
       * added the main container where all content will be shown. 
