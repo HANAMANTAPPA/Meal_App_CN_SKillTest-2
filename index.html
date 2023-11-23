@@ -37,28 +37,19 @@
          </div> 
          <div style="color: rgb(88, 85, 85); " ><hr style="height: 2px;"></div>
          <div id="search-box"> 
-            <input type="text" id="input-textbox" placeholder="Enter any dish Name"> 
-            <i class="fa-solid fa-magnifying-glass fa-beat" 
-            style="align-self: center; font-size: 2pc;
-             margin-right: 15px; cursor: pointer;
-             color: rgb(88, 85, 85);"
-             id="search-icon"></i> 
+            <input type="text" id="input-textbox" placeholder="Enter any dish Name" style="height: 50px;"> 
+            <i class="fa-solid fa-magnifying-glass fa-beat" id="search-icon"></i> 
+            <div class="suggesstions-wrap">
+                <ul class="suggesstions"> 
+                         <!-- <li>kjshdkjasdhjshkdjashdkhaskj</li> -->
+                </ul>
+            </div>
          </div>
          <div style="color: rgb(88, 85, 85); " ><hr style="height: 2px;"></div>
 
          <div id="dishes-container">
 
             <!--  searched result or favourite dishes  -->
-            <!--  Just for Example  -->
-             <div>
-                <div > 
-                    <img src="https://static.turbosquid.com/Preview/2020/04/28__03_42_00/IndexPointingUpEmojic4dmodel000.jpg44CB23FD-3C46-4B5D-A284-C789390636C2Res300.jpg" 
-                    alt="" id="srcimg" > 
-                </div>
-                <div  style="display: flex; ">  
-                    <span >Enter any Dish Name on the above search box</span> 
-                </div>
-            </div>
             <!-- <div ><a href="mealDetailPage.html" >
                 <img src=  ${dish.strMealThumb}
                 alt="dishImage not showing" id="srcimg" data-id="${dish.idMeal}">
