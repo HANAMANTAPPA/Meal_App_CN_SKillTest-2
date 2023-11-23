@@ -49,16 +49,26 @@
 
          <div id="dishes-container">
 
-            <!--  searched result or favourite dishes  -->
-            <!-- <div ><a href="mealDetailPage.html" >
+            <!-- <div> of searched result or favourite dishes</div> -->
+            <!-- <div ><a  href="mealDetailPage.html" >
                 <img src=  ${dish.strMealThumb}
                 alt="dishImage not showing" id="srcimg" data-id="${dish.idMeal}">
                     </a>
+            </div>
+            <div  style="display: flex; "> 
+                <div style="font-size: x-large; margin: auto 5px;">  <i class="fa-solid fa-heart" id="${heartId}" data-id="${dish.idMeal}"></i></div>
+                <span >${dish.strMeal}</span> 
+            </div>  -->
+            <div>
+                <div > 
+                    <img src="https://static.turbosquid.com/Preview/2020/04/28__03_42_00/IndexPointingUpEmojic4dmodel000.jpg44CB23FD-3C46-4B5D-A284-C789390636C2Res300.jpg" 
+                    alt="" id="srcimg" > 
                 </div>
-                <div  style="display: flex; "> 
-                    <div style="font-size: x-large; margin: auto 5px;">  <i class="fa-solid fa-heart" id="${heartId}" data-id="${dish.idMeal}"></i></div>
-                    <span >${dish.strMeal}</span> 
-                </div> -->
+                <div  style="display: flex; ">  
+                    <span >Enter any Dish Name on the above search box</span> 
+                </div>
+            </div>
+            <!-- <div> of searched result or favourite dishes</div> -->
          </div>
     </div> 
     <footer style="color: gray; text-align: right;"> 
