@@ -116,12 +116,6 @@ function renderToHomeDom(dish){
     return;
 }
 
- 
-
-function suggesation(text){
-
-}
-
 function search(text){ // Create searchedResult array from result  
     const apiLink="https://www.themealdb.com/api/json/v1/1/search.php?s="+text;
     // console.log(apiLink);
