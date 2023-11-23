@@ -4,6 +4,8 @@
 // web elements  ----------------------- 
 const addDishInput =document.getElementById("input-textbox");
 const dishContainerDOM =document.getElementById("dishes-container");
+const suggesstions_wrap= document.querySelector(".suggesstions-wrap");
+const suggesstionsContainer =document.querySelector(".suggesstions");
 
 //  DATA  --------------------
 let Dishdetail=[]; 
@@ -40,7 +42,11 @@ function fetchSearchReasult(apiLink){   // use async if u use 2nd approach to fe
         return response.json();
     }).then(function (data){ 
         // console.log(data);
-        searchedResult=data.meals; // add to result list
+        searchedResult=data.meals; // add to result list 
+        if(searchedResult===null){
+            alert("This dish is not available")
+            return;
+        }
         for(let i of searchedResult){
             i.fav =(i.fav===true);   //  addedd fav item to list 
         }
@@ -169,15 +175,66 @@ function showNotification(text){
     alert(text);
 }
 
+function select(element) {
+    let selectData = element.textContent;
+    console.log(element.textContent);
+    addDishInput.value = selectData;
+    
+    suggesstionsContainer.onclick = ()=>{ 
+    }
+    suggesstions_wrap.classList.remove("show");
+}
+
+function addListToListDOM(recomendeList){  
+    if(!recomendeList.length || addDishInput.value===""){
+        suggesstionsContainer.innerHTML="";
+        return suggesstions_wrap.classList.remove("show");
+    }
+    suggesstions_wrap.classList.add("show")
+    suggesstionsContainer.innerHTML="";
+    recomendeList.map(reItem => {
+        const lii=document.createElement('li');
+        lii.textContent = reItem.item;
+        lii.setAttribute("onclick", "select(this)");
+        suggesstionsContainer.appendChild(lii)
+    })
+}
+async function filterSuggesation(){
+    const response = await fetch("suggesation.json");
+    const suggesationListData =await response.json();
+    const text=addDishInput.value;
+    let recomendeList=[];
+    // console.log(suggesationListData);
+    recomendeList = suggesationListData.filter((ListItem)=>{ return ListItem.item.toLowerCase().includes(text.toLowerCase() ) } );  
+    addListToListDOM(recomendeList);
+    // console.log(recomendeList);
+    let allList = suggesstions_wrap.querySelectorAll("li");
+    // console.log(allList); 
+    for (let i = 0; i < allList.length; i++) {
+        //adding onclick attribute in all li tag 
+        // allList[i].setAttribute("onclick", "select(this)");
+        allList[i].onclick =function(e){
+            // console.log(this.innerText);
+            addDishInput.value = this.innerText;
+            suggesstionsContainer.innerHTML="";
+            suggesstions_wrap.classList.remove("show");
+        }
+    }
+}
+
 function handleInputKeyPress(e){
     if(e.key =='Enter'){
         const text=e.target.value;
         if(text.length <1 ){
             showNotification("Enter atleat four characters");
             return;
-        } 
+        }  
         search(text);
-        e.target.value ='';
+        e.target.value =''; 
+        suggesstionsContainer.innerHTML="";
+        return suggesstions_wrap.classList.remove("show");
+    }else{ 
+        filterSuggesation();
     }
 }
 function handleClick(e){
@@ -190,8 +247,11 @@ function handleClick(e){
             showNotification("Enter atleat one characters");
             return;
         } 
+        suggesstions_wrap.classList.remove("show");
         search(text);
         addDishInput.value ='';
+        suggesstionsContainer.innerHTML="";
+        return suggesstions_wrap.classList.remove("show");
     }else if(target.id === 'heart'){
         console.log("clicked to add");
         const taaskID=target.dataset.id; 
