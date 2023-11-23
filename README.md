@@ -46,11 +46,16 @@ Visite the following website fo working demo https://hanamantappa.github.io/Meal
       -  checkItemInFavList
       -  renderToHomeDom // render fetched elements to DOM
    * ### Meal Detail page
-      -  show meal detail 
+      -  addToMealDetailDOM
+      -  toggleFav (Out of Scope)
+      -  addTofavList (Out of Scope)
+      -  removeFromfavList (Out of Scope)
    * ### Favourite Dishes  page
       -  addTofavList
-      -  removeFromfavList
+      -  removeFav
       -  showNotification
+      -  addToMealDetailDOM
+      -  addmealsToDOM
       
 ## Data
    - Dishdetail - an array of only one item 
