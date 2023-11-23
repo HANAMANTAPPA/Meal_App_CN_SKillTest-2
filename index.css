@@ -57,19 +57,66 @@ body{
 #search-box{
     align-self: center;  
     height: 50px;
-    width: 60%;
-    display: flex;
+    max-height: 200px;
+    width: 60%; 
+    flex-direction: column;
     border-radius: 10pc;
     border: 1px black solid;
+    position: relative;
+}
+#search-icon{  
+    font-size: 2pc; 
+    cursor: pointer;
+    color: rgb(88, 85, 85); 
+    position: absolute; 
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-left: auto;
+    margin-top: 9px;
+    text-align: center;
 }
 #input-textbox {   
     background: transparent;
     font-size: large; 
-    border: none; 
-    width: 100%;
+    border: none;  
     border-radius: 10pc; 
     text-align: center;
+    height: 50px;
+    width: 100%;
 }
+#input-textbox:focus{
+    outline: none; 
+}
+/* Suggesations */
+
+.suggesstions-wrap .suggesstions {
+    margin: 0; 
+    padding: 0;  
+}
+.suggesstions-wrap .suggesstions li {
+  list-style: none;
+  border-radius: 3px;
+  padding: 8px 25px;
+  transition: all .5s linear;
+}
+
+.suggesstions-wrap {
+    display: flex;
+    background-color: rgb(240, 245, 194);
+    max-height: 300px;
+    overflow-y: scroll;
+    /* border-radius: 10pc; */
+}
+
+.suggesstions-wrap.show {
+  display: block;
+}
+
+.suggesstions-wrap .suggesstions li:hover {
+  background: rgb(228, 228, 59);
+}
+/* suggesation end  */
 #dishes-container{
     display: flex;
     flex-wrap: wrap;
@@ -85,6 +132,7 @@ body{
     margin: 10px;
     /* background-color: brown; */
 }
+
 #srcimg{
     height: 200px;
     margin: 20px 25px 10px;
@@ -93,6 +141,7 @@ body{
 #srcimg:hover{
     transition: ease-in-out; 
     transform: scale(1.12); 
+    transition: all 1s ease-out;
     /* scale: 1.1; */
 }
 #dishes-container span{
