@@ -39,12 +39,15 @@ Visite the following website fo working demo https://hanamantappa.github.io/Meal
 ## Functions (In scope)
    * ### HOME page
       -  search , fetchSearchReasult
+      -  toggleFav
       -  addTofavList
       -  removeFromfavList
       -  showNotification
-      -  toggleFav
-      -  renderToHomeDom // render fetched elements to DOM  
-   * ### HOFavourite Dishes  page
+      -  checkItemInFavList
+      -  renderToHomeDom // render fetched elements to DOM
+   * ### Meal Detail page
+      -  show meal detail 
+   * ### Favourite Dishes  page
       -  addTofavList
       -  removeFromfavList
       -  showNotification
