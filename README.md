@@ -1,7 +1,7 @@
 # ToDoList
 A meal app to store and search meals. 
 here I used vanilla JS  
-Visite the following website fo working demo https://hanamantappa.github.io/Meal_App_CN_SKillTest-2/
+Visite the following website for working demo https://hanamantappa.github.io/Meal_App_CN_SKillTest-2/
 
 ## Home Page
 ![hkk1](https://github.com/HANAMANTAPPA/Meal_App_CN_SKillTest-2/assets/48180907/36e6e867-aa48-4607-97a1-e2291ec857ed)  ![hkk2](https://github.com/HANAMANTAPPA/Meal_App_CN_SKillTest-2/assets/48180907/d4522838-9e87-44bb-889c-3dfb501872b6)
